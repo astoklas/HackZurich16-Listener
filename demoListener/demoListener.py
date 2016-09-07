@@ -9,8 +9,8 @@ from influxdb import InfluxDBClient
 # Write values to the influxdb
 # Tags: SensorID
 # fields: all types defined in the message from rabbitmq
-# measurement is called "HackZurich16"
-# DB is called "HackZurich16"
+# measurement is called "HackZurich16" by default
+# DB is called "HackZurich16" by default
 
 def writeInflux(db, msg):
     data = msg['data']
@@ -34,7 +34,7 @@ def writeInflux(db, msg):
     myDB['fields']=myFields
     myPoint.append(myDB)
     json_data = json.dumps(myPoint, sort_keys=True, indent=4, separators=(',', ': '))
-    print json_data
+    #print json_data
     #print " [x] Writing Data to InfluxDB"
     db.write_points(myPoint)
 #    return myDB
