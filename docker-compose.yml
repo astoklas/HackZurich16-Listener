@@ -11,6 +11,7 @@ services:
      - INFLUXDB_GRAPHITE_ENABLED=true
      - ADMIN_USER=root
      - INFLUXDB_INIT_PWD=root
+     - INFLUXDB_DATA_QUERY_LOG_ENABLED=false
   grafana:
     image: grafana/grafana
     links:
