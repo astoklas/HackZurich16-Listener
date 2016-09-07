@@ -1,0 +1,35 @@
+version: '2'
+services:
+  influxdb:
+    image: influxdb
+    ports:
+     - "8083:8083"
+     - "8086:8086"
+    volumes:
+     - $PWD/influxdb:/var/lib/influxdb
+    environment:
+     - INFLUXDB_GRAPHITE_ENABLED=true
+     - ADMIN_USER=root
+     - INFLUXDB_INIT_PWD=root
+  grafana:
+    image: grafana/grafana
+    links:
+     - influxdb
+    ports:
+     - "3000:3000"
+    environment:
+     - GF_SECURITY_ADMIN_PASSWORD=C1sco123
+  demolistener:
+    build:
+      context: ./demoListener
+      dockerfile: ./Dockerfile
+    command: /usr/local/bin/python2.7 /usr/src/demoListener.py
+    links:
+      - influxdb
+    environment:
+     - RABBITMQ_DEFAULT_USER=cisco
+     - RABBITMQ_DEFAULT_PASS=C1sco123
+     - RABBITMQ_HOST=10.228.8.153
+     - RABBITMQ_QUEUE=HackZurich16
+     - INFLUXDB_HOST=influxdb
+     - INFLUXDB_NAME=BMFtest
