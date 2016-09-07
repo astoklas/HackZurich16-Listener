@@ -7,9 +7,13 @@ adapt env variable in docker-compose for the rabbitmq to the IP hosting the rabb
 docker-compose build
 docker-compose up
 
+## Configuration
+### Grafana
 Head over to the grafan board (running on port 3000), user:admin admin:C1sco123(default, change with env variable)
 Add datasource influx db (http://influxdb:8086, proxy-access, no auth, add db HackZurich16 with root/root)
 Add dashboard, add panel and add graph
 
-##Configuration
+
+
+### Influxdb
 tbd
