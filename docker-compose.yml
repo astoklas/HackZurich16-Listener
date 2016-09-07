@@ -32,4 +32,4 @@ services:
      - RABBITMQ_HOST=10.228.8.153
      - RABBITMQ_QUEUE=HackZurich16
      - INFLUXDB_HOST=influxdb
-     - INFLUXDB_NAME=BMFtest
+     - INFLUXDB_NAME=HackZurich16
