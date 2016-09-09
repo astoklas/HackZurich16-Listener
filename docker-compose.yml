@@ -15,16 +15,17 @@ services:
      - INFLUXDB_HTTP_LOG_ENABLED=false
      - INFLUXDB_META_LOGGING_ENABLED=false
      - INFLUXDB_DATA_TRACE_LOGGING_ENABLED=false
-     - INFLUXDB_COORDINATOR_LOG_QUERIES_AFTER=false
      - INFLUXDB_CONTINUOUS_QUERIES_LOG_ENABLED=false
+    network_mode: bridge
   grafana:
     image: grafana/grafana
     links:
      - influxdb
     ports:
-     - "3000:15002"
+     - "15002:3000"
     environment:
      - GF_SECURITY_ADMIN_PASSWORD=C1sco123
+    network_mode: bridge
   demolistener:
     build:
       context: ./demoListener
@@ -32,6 +33,7 @@ services:
     command: /usr/local/bin/python2.7 /usr/src/demoListener.py
     links:
       - influxdb
+      - grafana
     environment:
      - RABBITMQ_DEFAULT_USER=cisco
      - RABBITMQ_DEFAULT_PASS=C1sco123
@@ -40,3 +42,4 @@ services:
      - RABBITMQ_QUEUE=HackZurich16
      - INFLUXDB_HOST=influxdb
      - INFLUXDB_NAME=HackZurich16
+    network_mode: bridge
