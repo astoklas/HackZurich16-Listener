@@ -41,5 +41,6 @@ services:
      - RABBITMQ_PORT=15001
      - RABBITMQ_QUEUE=HackZurich16
      - INFLUXDB_HOST=influxdb
+     - INFLUXDB_PORT=8086
      - INFLUXDB_NAME=HackZurich16
     network_mode: bridge
