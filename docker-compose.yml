@@ -22,7 +22,7 @@ services:
     links:
      - influxdb
     ports:
-     - "3000:3000"
+     - "3000:15002"
     environment:
      - GF_SECURITY_ADMIN_PASSWORD=C1sco123
   demolistener:
@@ -36,6 +36,7 @@ services:
      - RABBITMQ_DEFAULT_USER=cisco
      - RABBITMQ_DEFAULT_PASS=C1sco123
      - RABBITMQ_HOST=198.18.134.28
+     - RABBITMQ_PORT=15001
      - RABBITMQ_QUEUE=HackZurich16
      - INFLUXDB_HOST=influxdb
      - INFLUXDB_NAME=HackZurich16
