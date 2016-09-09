@@ -93,7 +93,7 @@ db.create_retention_policy('awesome_policy', '3d', 3, default=True)
 print "Done"
 print "Ready to listen ...."
 def callback(ch, method, properties, body):
-    print(" [x] Received %r" % body)
+    #print(" [x] Received %r" % body)
     writeInflux(db,json.loads(body))
 
 channel.basic_consume(callback,queue=queue_rabbit,no_ack=True)
