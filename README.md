@@ -20,7 +20,7 @@ scaling with any of the tiers has not been tested!
 Head over to the grafana board (running on port 15002), user:admin admin:C1sco123(default, change with env variable)
 Add datasource influx db **(http://198.18.134.28:8086, proxy-access, no auth, add db HackZurich16 with root/root)**
 
-![addDB](https://github.com/astoklas/HackZurich16-Listener/blob/master/doc/addDB.png)
+![addDB](https://github.com/astoklas/HackZurich16-Listener/blob/master/doc/addDBnew.png)
 
 Add dashboard  
 ![add Dashboard](https://github.com/astoklas/HackZurich16-Listener/blob/master/doc/addDash.png)
