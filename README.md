@@ -17,8 +17,8 @@ scaling with any of the tiers has not been tested!
 
 ## Configuration
 ### Grafana
-Head over to the grafan board (running on port 3000), user:admin admin:C1sco123(default, change with env variable)
-Add datasource influx db (http://influxdb:8086, proxy-access, no auth, add db HackZurich16 with root/root)
+Head over to the grafana board (running on port 15002), user:admin admin:C1sco123(default, change with env variable)
+Add datasource influx db **(http://198.18.134.28:8086, proxy-access, no auth, add db HackZurich16 with root/root)**
 
 ![addDB](https://github.com/astoklas/HackZurich16-Listener/blob/master/doc/addDB.png)
 
